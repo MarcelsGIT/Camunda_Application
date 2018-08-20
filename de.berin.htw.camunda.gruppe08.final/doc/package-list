@@ -1,0 +1,13 @@
+de.htw.berin.camunda.gruppe08.dao
+de.htw.berin.camunda.gruppe08.dao.data
+de.htw.berin.camunda.gruppe08.dao.dbAccess
+de.htw.berin.camunda.gruppe08.dao.operations
+de.htw.berin.camunda.gruppe08.domain
+de.htw.berin.camunda.gruppe08.mail
+de.htw.berin.camunda.gruppe08.mail.mailAccess
+de.htw.berin.camunda.gruppe08.main
+de.htw.berin.camunda.gruppe08.main.taskoperations
+de.htw.berin.camunda.gruppe08.main.taskoperations.kundeprocess
+de.htw.berin.camunda.gruppe08.main.taskoperations.service
+de.htw.berin.camunda.gruppe08.main.taskoperations.sitterprocess
+de.htw.berin.camunda.gruppe08.main.taskoperations.startprocess

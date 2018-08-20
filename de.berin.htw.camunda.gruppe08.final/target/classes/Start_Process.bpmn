@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.3">
+  <bpmn:collaboration id="start">
+    <bpmn:participant id="Participant_0zxr20w" name="System" processRef="start_finding_sitter" />
+    <bpmn:participant id="Participant_16s0rxp" name="System" />
+    <bpmn:participant id="Participant_0tgxbo8" name="Kunde" />
+    <bpmn:messageFlow id="MessageFlow_0nu71l4" sourceRef="EndEvent_1azax7v" targetRef="Participant_16s0rxp" />
+    <bpmn:messageFlow id="MessageFlow_1bwpgys" sourceRef="Participant_0tgxbo8" targetRef="StartEvent_14719t0" />
+  </bpmn:collaboration>
+  <bpmn:process id="start_finding_sitter" isExecutable="true">
+    <bpmn:endEvent id="EndEvent_1azax7v" name="Anfrageformular an System gesendet">
+      <bpmn:incoming>SequenceFlow_135hsd0</bpmn:incoming>
+      <bpmn:messageEventDefinition camunda:class="de.htw.berin.camunda.gruppe08.main.taskoperations.startprocess.SendAnfrageformularAusgefuellt" />
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_135hsd0" sourceRef="StartEvent_14719t0" targetRef="EndEvent_1azax7v" />
+    <bpmn:startEvent id="StartEvent_14719t0" name="Anfrageformular ausgefuellt">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="Vorname_Start" label="Vorname" type="string" defaultValue="Huyen">
+            <camunda:validation>
+              <camunda:constraint name="readonly" config="true" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="Nachname_Start" label="Nachname" type="string" defaultValue="Dao">
+            <camunda:validation>
+              <camunda:constraint name="readonly" config="true" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="PLZ_Start" label="PLZ" type="string">
+            <camunda:validation>
+              <camunda:constraint name="required" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="Haustier_Start" label="Haustier" type="enum">
+            <camunda:validation>
+              <camunda:constraint name="required" />
+            </camunda:validation>
+            <camunda:value id="Hund" name="Hund" />
+            <camunda:value id="Katze" name="Katze" />
+            <camunda:value id="Maus" name="Maus" />
+            <camunda:value id="Spinne" name="Spinne" />
+            <camunda:value id="Saebelzahntiger" name="Saebelzahntiger" />
+          </camunda:formField>
+          <camunda:formField id="Strasse_Start" label="Strasse " type="string" />
+          <camunda:formField id="Ort_Start" label="Ort" type="string" />
+          <camunda:formField id="Haltungsart_Start" label="Haltungsart" type="enum">
+            <camunda:validation>
+              <camunda:constraint name="required" />
+            </camunda:validation>
+            <camunda:value id="Wohnung" name="Wohnung" />
+            <camunda:value id="HausMitGarten" name="HausMitGarten" />
+            <camunda:value id="Freigelaende" name="Freigelaende" />
+          </camunda:formField>
+          <camunda:formField id="Futter_Start" label="Futter" type="enum">
+            <camunda:validation>
+              <camunda:constraint name="required" />
+            </camunda:validation>
+            <camunda:value id="Trockenfutter" name="Trockenfutter" />
+            <camunda:value id="Nassfutter" name="Nassfutter" />
+            <camunda:value id="Lebendfutter" name="Lebendfutter" />
+            <camunda:value id="Mast" name="Mast" />
+          </camunda:formField>
+          <camunda:formField id="andereTiere_Start" label="Weitere Tiere im Sitter-Haushalt?" type="boolean" />
+          <camunda:formField id="startDatum_Start" label="Beginn" type="date">
+            <camunda:validation>
+              <camunda:constraint name="required" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="endDatum_Start" label="Ende" type="date">
+            <camunda:validation>
+              <camunda:constraint name="required" />
+            </camunda:validation>
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>SequenceFlow_135hsd0</bpmn:outgoing>
+    </bpmn:startEvent>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="start">
+      <bpmndi:BPMNShape id="Participant_0zxr20w_di" bpmnElement="Participant_0zxr20w">
+        <dc:Bounds x="-4.928571428571445" y="127.4750430292599" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_14719t0_di" bpmnElement="StartEvent_14719t0">
+        <dc:Bounds x="151" y="221" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="129" y="261" width="81" height="24" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_15bi3m4_di" bpmnElement="EndEvent_1azax7v">
+        <dc:Bounds x="352" y="225" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="328" y="265" width="84" height="36" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_135hsd0_di" bpmnElement="SequenceFlow_135hsd0">
+        <di:waypoint xsi:type="dc:Point" x="187" y="239" />
+        <di:waypoint xsi:type="dc:Point" x="296" y="239" />
+        <di:waypoint xsi:type="dc:Point" x="296" y="243" />
+        <di:waypoint xsi:type="dc:Point" x="352" y="243" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="266" y="235" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Participant_0a30mwi_di" bpmnElement="Participant_16s0rxp">
+        <dc:Bounds x="-5" y="484" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MessageFlow_0nu71l4_di" bpmnElement="MessageFlow_0nu71l4">
+        <di:waypoint xsi:type="dc:Point" x="370" y="261" />
+        <di:waypoint xsi:type="dc:Point" x="370" y="484" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="340" y="366.5" width="90" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Participant_0hhkn8z_di" bpmnElement="Participant_0tgxbo8">
+        <dc:Bounds x="-5" y="-186" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="MessageFlow_1bwpgys_di" bpmnElement="MessageFlow_1bwpgys">
+        <di:waypoint xsi:type="dc:Point" x="171" y="64" />
+        <di:waypoint xsi:type="dc:Point" x="171" y="222" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="186" y="137" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

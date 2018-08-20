@@ -1,0 +1,6 @@
+﻿Vorname;Nachname;Tierarten;Futterarten;andereTiere;Ort;PLZ;Straße;Haltungsart;SitterID
+Siegfried;Schmitt;Hund, Katze, Maus;Trockenfutter, Nassfutter;ja;Heidelberg;54321;Schmuddelstraße 30;HausMitGarten;1
+Moritz;Meier;Maus, Spinne;Trockenfutter, Lebendfutter;ja;Trier;32133;Muffatstraße 5;Wohnung;2
+Alena;Bla;Katze, Hund;Trockenfutter, Nassfutter;nein;Berlin;12345;CatDog Gasse 13;HausMitGarten;3
+Felix;Hase;Katze;Trockenfutter;ja;Berlin;13245;Miauzenplatz 8;Wohnung;4
+Benjamin;Bluemchen;Saebelzahntiger;Mast, Lebendfutter;nein;Trier;32423;Raawrweg 10;Freigelaende;5
